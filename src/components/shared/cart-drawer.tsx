@@ -41,7 +41,7 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
               <div className="flex-1 overflow-y-auto pr-2 -mr-2">
                 <div className="space-y-4">
                   {items.map((item) => (
-                    <div key={item.id} className="flex items-start gap-4 p-4 border rounded-lg">
+                    <div key={item.cartItemId || item.id} className="flex items-start gap-4 p-4 border rounded-lg">
                       <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
                         <img 
                           src={item.image || "/placeholder.svg"} 
@@ -61,7 +61,7 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
                             variant="outline" 
                             size="sm"
                             className="h-7 w-7 p-0"
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            onClick={() => updateQuantity(item.cartItemId || item.id, item.quantity - 1)}
                           >
                             <Minus className="h-3 w-3" />
                           </Button>
@@ -70,7 +70,7 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
                             variant="outline" 
                             size="sm"
                             className="h-7 w-7 p-0"
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() => updateQuantity(item.cartItemId || item.id, item.quantity + 1)}
                           >
                             <Plus className="h-3 w-3" />
                           </Button>
@@ -81,7 +81,7 @@ export function CartDrawer({ isOpen, onOpenChange }: CartDrawerProps) {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => removeItem(item.id)}
+                          onClick={() => removeItem(item.cartItemId || item.id)}
                           className="text-red-500 hover:text-red-700 p-1 h-auto"
                         >
                           <Trash2 className="h-3 w-3" />
