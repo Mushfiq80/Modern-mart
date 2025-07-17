@@ -147,7 +147,7 @@ export function Header() {
                             <Link to="/register">Create Account</Link>
                           </DropdownMenuItem>
                           <DropdownMenuItem asChild>
-                            <Link to="/account">My Account</Link>
+                            <Link to="/dashboard">My Account</Link>
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -245,7 +245,7 @@ export function Header() {
 
                 {/* Account - Mobile */}
                 <Link
-                  to="/account"
+                  to="/dashboard"
                   className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors md:hidden"
                   onClick={() => setIsMenuOpen(false)}
                 >

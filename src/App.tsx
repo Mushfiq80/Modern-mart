@@ -9,6 +9,12 @@ import CartPage from './components/shared/cart'
 import CheckoutPage from './pages/Checkout'
 import ProductDetailPage from './pages/SingleProduct'
 import ProductsPage from './pages/AllProducts'
+import DashboardPage from './pages/dashboard'
+import WishlistPage from './pages/Wishlist'
+import CategoriesPage from './pages/AllCategories'
+import CategoryPage from './pages/SingleCategory'
+import AboutPage from './pages/About'
+import ContactPage from './pages/Contact'
 
 function App() {
   return (
@@ -21,9 +27,14 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/products" element={<ProductsPage />} />
                 <Route path="/product/:id" element={<ProductDetailPage />} />
-                <Route path="/category/:category" element={<div>Category Page - Coming Soon</div>} />
+                <Route path="/categories" element={<CategoriesPage />} />
+                <Route path="/category/:category" element={<CategoryPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/wishlist" element={<WishlistPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
                 {/* Add more routes here as needed */}
               </Routes>
             </Layout>
